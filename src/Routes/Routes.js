@@ -1,18 +1,31 @@
+import { createBrowserRouter } from "react-router-dom";
 import Login from "../pages/Login/Login";
-import Singup from "../pages/Singup/Singup";
+import Main from "../pages/Outlet/Main";
 
-const { createBrowserRouter } = require("react-router-dom");
+import DisplyError from './../Shared/DisplyError';
+import Singup from './../pages/Singup/Singup';
+
+
+
 
 const router=createBrowserRouter([
     {
         path:'/',
-        element:<Singup></Singup>
+        element:<Main></Main>,
+        errorElement:<DisplyError></DisplyError>,
+        children:[
+            {
+                path:'/login',
+                element:<Login></Login>
+            },
+            {
+                path:'/singup',
+                element:<Singup></Singup>
+            }
+        ]
         
     },
-    {
-        path:'/login',
-        element:<Login></Login>
-    }
+    
     
 ])
 export default router
