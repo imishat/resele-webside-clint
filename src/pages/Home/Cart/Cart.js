@@ -6,7 +6,7 @@ import Items from './Items';
 const Cart = () => {
     const cart=useLoaderData()
     const [modalData,setModalData]=useState(null)
-    console.log(cart)
+   
     return (
         <div className='grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 '>
           {
@@ -14,8 +14,8 @@ const Cart = () => {
               setModalData={setModalData} ></Items>)
           }
           <div>
-            <BookModal
-            modalData={modalData}></BookModal>
+           {  modalData&&<BookModal
+            modalData={modalData}></BookModal>}
           </div>
         </div>
     );
