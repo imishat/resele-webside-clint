@@ -9,6 +9,7 @@ import Cart from "../pages/Home/Cart/Cart";
 import Dashborad from "../pages/Outlet/Dashborad";
 import MyOders from "../Dashboard/MyOders/MyOders";
 import Alluser from "../Dashboard/Alluser/Alluser";
+import Addproducts from "../Dashboard/AddProducts/Addproducts";
 
 
 
@@ -33,8 +34,8 @@ const router=createBrowserRouter([
                 element:<Singup></Singup>
             },
             {
-                path:'/products/:id',
-                loader:({params})=>fetch(`http://localhost:5000/products/${params.id}`),
+                path:'/products/:category_id',
+                loader:({params})=>fetch(`http://localhost:5000/products/${params.category_id}`),
                 element:<Cart></Cart>
             }
         ]
@@ -52,6 +53,10 @@ const router=createBrowserRouter([
             {
                 path:'/dashboard/allusers',
                 element:<Alluser></Alluser>
+            }  ,
+            {
+                path:'/dashboard/products',
+                element:<Addproducts></Addproducts>
             }  
 
         ]
