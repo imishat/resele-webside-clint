@@ -1,12 +1,7 @@
 import React from 'react';
 
 const Items = ({items,setModalData}) => {
-     const{img,name,reseleprice,selername,originalprice,location,use
-     
-      
-
-
-     }=items
+     const{img,name,reseleprice,selername,originalprice,location,use}=items
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
   <figure className="px-10 pt-10">
@@ -24,8 +19,8 @@ const Items = ({items,setModalData}) => {
                 <p>Used:{use}</p>
                 </div>
                 
-    <div className="card-actions">
-    <label
+               <div className="card-actions">
+                 <label
                         
                         htmlFor="oders-modal"
                         className="btn btn-primary text-white"
