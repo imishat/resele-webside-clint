@@ -7,13 +7,13 @@ import { AuthContext } from '../../../../AuthProvider';
 
 const BookModal = ({ modalData}) => {
     console.log(modalData)
-    const {name,reseleprice,location}=modalData
+    const {name,reseleprice,location,img}=modalData
         
     const {user}=useContext(AuthContext)
     const handleBooking =event=>{
         event.preventDefault();
         const form = event.target;
-        const username = form.name.value;
+        const username = form.username.value;
         const email = form.email.value;
         const phone = form.phone.value;
         const price=form.price.value;
@@ -21,10 +21,11 @@ const BookModal = ({ modalData}) => {
         
         const oder={
             productNmae:name,
-          reseleprice,
+            reseleprice,
             email,
             phone,
             username,
+            img,location
 
 
         }

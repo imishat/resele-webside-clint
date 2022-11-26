@@ -129,7 +129,7 @@ const Addproducts = () => {
               <option value="Iphone">Iphone</option>
               <option value="Samsung">Samsung</option>
               <option value="Nokia">OPPO</option>
-              <option value="Realme">Realme</option>
+             
             </select>
             {errors.brand && (
               <p className="text-red-600" role="alert">
