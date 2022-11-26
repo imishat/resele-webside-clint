@@ -18,10 +18,10 @@ const BookModal = ({ modalData}) => {
         const phone = form.phone.value;
         const price=form.price.value;
         const name=form.name.value;
-        console.log(name,username,price,email,phone)
+        
         const oder={
             productNmae:name,
-            price,
+          reseleprice,
             email,
             phone,
             username,
@@ -31,6 +31,7 @@ const BookModal = ({ modalData}) => {
         fetch('http://localhost:5000/oders',{
             method:"POST",
             headers:{
+                'content-type': 'application/json'
 
             },
             body:JSON.stringify(oder)
@@ -49,10 +50,10 @@ const BookModal = ({ modalData}) => {
     }
     return (
         <>
-        <input type="checkbox" id="booking-modal" className="modal-toggle" />
+        <input type="checkbox" id="oders-modal" className="modal-toggle" />
         <div className="modal">
             <div className="modal-box relative">
-                <label htmlFor="booking-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                <label htmlFor="oders-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                 <h3 className="text-lg font-bold">{name}</h3>
                 <form onSubmit={handleBooking} className='grid grid-cols-1 gap-3 mt-10'> 
                     <input name="username" type="text" defaultValue={user?.displayName} disabled placeholder="Your Name" className="input w-full input-bordered" />

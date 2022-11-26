@@ -6,6 +6,9 @@ import DisplyError from './../Shared/DisplyError';
 import Singup from './../pages/Singup/Singup';
 import Home from "../pages/Home/Home";
 import Cart from "../pages/Home/Cart/Cart";
+import Dashborad from "../pages/Outlet/Dashborad";
+import MyOders from "../Dashboard/MyOders/MyOders";
+import Alluser from "../Dashboard/Alluser/Alluser";
 
 
 
@@ -37,6 +40,24 @@ const router=createBrowserRouter([
         ]
         
     },
+    {
+        path:'/dashboard',
+        element:<Dashborad></Dashborad>,
+        children:[
+            {
+                path:'/dashboard',
+                element:<MyOders></MyOders>
+                
+            },
+            {
+                path:'/dashboard/allusers',
+                element:<Alluser></Alluser>
+            }  
+
+        ]
+        
+    },
+    
     
     
 ])

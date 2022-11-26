@@ -17,7 +17,7 @@ const MemuName = () => {
                 {/* Content */}
 
 
-                <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
+                <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button ">Open drawer</label>
 
             </div>
             <div className="drawer-side">

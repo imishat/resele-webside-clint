@@ -12,8 +12,8 @@ const Singup = () => {
     const handleSignUp = (data, event) => {
 
         const form = event.target;
-        const select = form.select.value;
-        console.log(select,data.email,data.name)
+        const role = form.role.value;
+        console.log(role,data.email,data.name)
 
 
         setSignUPError('');
@@ -27,7 +27,7 @@ const Singup = () => {
                 }
                 updateUser(userInfo)
                     .then(() => {
-                        saveUser(data.name, data.email,select);
+                        saveUser(data.name, data.email,role);
                     })
                     .catch(err => console.log(err));
             })
@@ -39,8 +39,8 @@ const Singup = () => {
     }
 
 
-    const saveUser = (name, email,select) =>{
-        const user ={name, email,select};
+    const saveUser = (name, email,role) =>{
+        const user ={name, email,role};
         fetch('http://localhost:5000/users', {
             method: 'POST',
             headers: {
@@ -78,7 +78,7 @@ const Singup = () => {
                             <span className="label-text">Choose Option</span>
 
                         </label>
-                        <select name='select' className="select select-bordered">
+                        <select name='role' className="select select-bordered">
                             <option>Buyers</option>
                             <option>Seller</option>
 
