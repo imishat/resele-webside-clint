@@ -13,7 +13,7 @@ const Addproducts = () => {
   } = useForm();
   const ImageHostKey ='ab7a608b3c4591a0ef2f1f982f1236d4' 
   const date = Date.now();
-  const { user } = useContext(AuthContext);
+  const {user} = useContext(AuthContext);
   const navigate = useNavigate();
   // console.log(user);
   // const [isLoading, setIsLoading] = useState()
@@ -35,20 +35,20 @@ const Addproducts = () => {
 
         if (imgData.success) {
           const product = {
-            image: imgData.data.url,
-            name: data.name,
+            img: imgData.data.url,
+            selername: data.name,
             originalPrice: data.originalPrice,
-            resalePrice: data.resale,
-            usingTime: data.usingTime,
-            shopLocation: data.location,
+            resaleprice: data.resale,
+            use: data.usingTime,
+            location: data.location,
             condition: data.select,
             PhoneNumber: data.number,
-            Brand: data.brand,
+            category_id: data.brand,
             Time: date,
             userName: user.displayName,
             verify: false,
             userImage: user.photoURL,
-            userEmail: user.email,
+            email: user.email,
             description: data.description,
             purchase: data.purchase,
           };
@@ -91,6 +91,20 @@ const Addproducts = () => {
               className="w-full px-4 py-3 rounded-md border dark:border-gray-700  dark:text-gray-700 focus:dark:border-violet-400"
             />
           </div>
+          {/* <div className="space-y-1 text-sm">
+            <label htmlFor="sellerName" className="block dark:text-gray-400">
+              Seller Name
+            </label>
+            <input
+              type="text"
+              {...register("sellerName")}
+              name="selleremail"
+              id="selleremail"
+              defaultValue={user?.email}
+              readOnly
+              className="w-full px-4 py-3 rounded-md border dark:border-gray-700  dark:text-gray-700 focus:dark:border-violet-400"
+            />
+          </div> */}
           <div className="space-y-1 text-sm mt-5">
             <label htmlFor="name" className="block dark:text-gray-400">
               Product Name
@@ -126,9 +140,9 @@ const Addproducts = () => {
               <option value={""} disabled hidden selected>
                 Please Select your brand
               </option>
-              <option value="Iphone">Iphone</option>
-              <option value="Samsung">Samsung</option>
-              <option value="Nokia">OPPO</option>
+              <option value="02">Iphone</option>
+              <option value="01">Samsung</option>
+              <option value="03">Oppo</option>
              
             </select>
             {errors.brand && (

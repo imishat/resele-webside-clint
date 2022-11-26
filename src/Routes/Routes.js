@@ -10,6 +10,7 @@ import Dashborad from "../pages/Outlet/Dashborad";
 import MyOders from "../Dashboard/MyOders/MyOders";
 import Alluser from "../Dashboard/Alluser/Alluser";
 import Addproducts from "../Dashboard/AddProducts/Addproducts";
+import MyProducts from "../Dashboard/MyProducts/MyProducts";
 
 
 
@@ -57,6 +58,10 @@ const router=createBrowserRouter([
             {
                 path:'/dashboard/products',
                 element:<Addproducts></Addproducts>
+            } , 
+            {
+                path:'/dashboard/myProduct',
+                element:<MyProducts></MyProducts>
             }  
 
         ]

@@ -17,6 +17,7 @@ const Dashborad = () => {
                         <li><Link to="/dashboard">Oders</Link></li>
                         <li><Link to="/dashboard/allusers">All users</Link></li>
                         <li><Link to="/dashboard/products">Add Prouducts</Link></li>
+                        <li><Link to="/dashboard/myProduct">My Products</Link></li>
                         {/* {
                             isAdmin && <>
                                 
