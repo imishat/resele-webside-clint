@@ -37,8 +37,8 @@ const Addproducts = () => {
           const product = {
             img: imgData.data.url,
             selername: data.name,
-            originalPrice: data.originalPrice,
-            resaleprice: data.resale,
+            originalprice: data.originalPrice,
+            reseleprice: data.resale,
             use: data.usingTime,
             location: data.location,
             condition: data.select,
@@ -64,7 +64,7 @@ const Addproducts = () => {
             .then((data) => {
               console.log(data);
               toast.success(`Your Product is successfully added!`);
-            //   navigate("/dashboard/myProduct");
+              navigate("/dashboard/myProduct");
             });
         }
       });

@@ -11,6 +11,9 @@ import MyOders from "../Dashboard/MyOders/MyOders";
 import Alluser from "../Dashboard/Alluser/Alluser";
 import Addproducts from "../Dashboard/AddProducts/Addproducts";
 import MyProducts from "../Dashboard/MyProducts/MyProducts";
+import AdminRoute from "./AdminRoute";
+import BuyresRoute from "./BuyresRoute";
+import SellerRout from "./SellerRout";
 
 
 
@@ -47,21 +50,21 @@ const router=createBrowserRouter([
         element:<Dashborad></Dashborad>,
         children:[
             {
-                path:'/dashboard',
-                element:<MyOders></MyOders>
+                path:'/dashboard/add',
+                element:<BuyresRoute><MyOders></MyOders></BuyresRoute>
                 
             },
             {
                 path:'/dashboard/allusers',
-                element:<Alluser></Alluser>
+                element:<AdminRoute><Alluser></Alluser></AdminRoute>
             }  ,
             {
                 path:'/dashboard/products',
-                element:<Addproducts></Addproducts>
+                element:<SellerRout><Addproducts></Addproducts></SellerRout>
             } , 
             {
                 path:'/dashboard/myProduct',
-                element:<MyProducts></MyProducts>
+                element:<SellerRout><MyProducts></MyProducts></SellerRout>
             }  
 
         ]

@@ -20,6 +20,31 @@ const ViewProduct = ({product,refetch}) => {
                 refetch()
             })
         }
+        const handelAdd=()=>{
+            const items={
+                img,
+                resaleprice,
+                originalPrice,
+                location,
+                condition,
+                description,
+                selername,
+                use
+
+            }
+            fetch('http://localhost:5000/product',{
+                method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(items),
+            })
+            .then(res=>res.json())
+            .then(data=>{
+                console.log(data)
+                toast.success('Advices done')
+            })
+        }
       
     return (
         
@@ -42,7 +67,7 @@ const ViewProduct = ({product,refetch}) => {
 
 
                 <div className="card-actions justify-around">
-                    <button className='btn btn-primary'>Advices</button>
+                    <button className='btn btn-primary' onClick={handelAdd}>Advices</button>
                     <button className='btn btn-primary' onClick={()=> handleDelete(_id)}>DELETE</button>
 
                     {/* <label htmlFor="my-modal" className="btn" onClick={() => setBuyNow(service)}>Booking</label> */}
