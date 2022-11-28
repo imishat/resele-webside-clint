@@ -48,7 +48,7 @@
 
 
 Projects name:bd.sell
-live link:
+live link:https://singular-bombolone-150f9e.netlify.app/
 
 Project Description: bd.sell Gadget is a MERN stack website which is based on Phone sell Management,In this website We have functionality to Create,Read,Update,Delete for different kind of Phone  products.Here we can update product qunatity and stock . Also we can Add new product for every logged in user and also can showing product in the UI. admin see all seller and byuer and he also delete user and seller
 Basic Project Structure, features and functionality
