@@ -29,7 +29,7 @@ const BookModal = ({ modalData}) => {
 
 
         }
-        fetch('http://localhost:5000/oders',{
+        fetch('https://server-to-side.vercel.app/oders',{
             method:"POST",
             headers:{
                 'content-type': 'application/json'

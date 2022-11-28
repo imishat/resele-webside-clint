@@ -38,21 +38,6 @@ const User = ({ user, handleDelete, handelUserVerify }) => {
         ) : (
           <p> ---- </p>
         )}
-
-        {/* {role === "Admin" ? (
-          <button
-            className="bg-blue-700  text-white py-1 px-2 rounded-lg"
-            disabled
-          >
-            Admin
-          </button>
-        ) : role === "Buyer" ? (
-          <p>---</p>
-        ) : (
-              
-            role === "Seller" && verify === "true" ? <p>bbb</p>: <p>ooooo</p>
-          
-        )} */}
       </td>
       <th>
         {role === "Admin" ? (

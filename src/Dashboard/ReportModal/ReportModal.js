@@ -18,10 +18,11 @@ const ReportModal = ({report}) => {
             email,
             report,
             username,
+            name
           
 
         }
-        fetch('http://localhost:5000/report',{
+        fetch('https://server-to-side.vercel.app/report',{
             method:"POST",
             headers:{
                 'content-type': 'application/json'

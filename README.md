@@ -1,4 +1,40 @@
+Projects name:bd.sell
+live link:
+
+Project Description: bd.sell Gadget is a MERN stack website which is based on Phone sell Management,In this website We have functionality to Create,Read,Update,Delete for different kind of Phone  products.Here we can update product qunatity and stock . Also we can Add new product for every logged in user and also can showing product in the UI. admin see all seller and byuer and he also delete user and seller
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
+
+
+
+
+
+
+
+
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

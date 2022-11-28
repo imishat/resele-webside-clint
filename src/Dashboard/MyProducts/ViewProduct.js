@@ -11,7 +11,7 @@ const ViewProduct = ({product,refetch}) => {
             console.log(id)
         
       
-            fetch(`http://localhost:5000/products${id}`,{
+            fetch(`https://server-to-side.vercel.app/products${id}`,{
                 method:'DELETE'
             })
             .then(res=>res.json())
@@ -32,7 +32,7 @@ const ViewProduct = ({product,refetch}) => {
                 use
 
             }
-            fetch('http://localhost:5000/product',{
+            fetch('https://server-to-side.vercel.app/product',{
                 method: "POST",
             headers: {
               "content-type": "application/json",
@@ -70,7 +70,7 @@ const ViewProduct = ({product,refetch}) => {
                     <button className='btn btn-primary' onClick={handelAdd}>Advices</button>
                     <button className='btn btn-primary' onClick={()=> handleDelete(_id)}>DELETE</button>
 
-                    {/* <label htmlFor="my-modal" className="btn" onClick={() => setBuyNow(service)}>Booking</label> */}
+                   
 
                 </div>
             </div>

@@ -45,7 +45,7 @@ const router=createBrowserRouter([
             },
             {
                 path:'/products/:category_id',
-                loader:({params})=>fetch(`http://localhost:5000/products/${params.category_id}`),
+                loader:({params})=>fetch(`https://server-to-side.vercel.app/products/${params.category_id}`),
                 element:<PrivetRouts><Cart></Cart></PrivetRouts>
             },
             {
@@ -80,7 +80,7 @@ const router=createBrowserRouter([
             {
                 path:'/dashboard/payment/:id',
                 element:<Payment></Payment>,
-                loader:({params})=>fetch(`http://localhost:5000/oders/${params.id}`)
+                loader:({params})=>fetch(`https://server-to-side.vercel.app/oders/${params.id}`)
 
             } ,
             {

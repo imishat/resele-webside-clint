@@ -1,9 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import { toast } from "react-toastify";
-//import toast from "react-hot-toast";
 import Lodaing from "../../Shared/Lodaing";
-//import Loader from "../../../Loader/Loader";
 import User from "./User";
 
 const AllUsers = () => {
@@ -14,7 +12,7 @@ const AllUsers = () => {
   } = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
-      const res = await fetch('http://localhost:5000/users');
+      const res = await fetch('https://server-to-side.vercel.app/users');
       const data = await res.json();
       return data;
     },
@@ -26,7 +24,7 @@ const AllUsers = () => {
       "Are you sure, you want to cancel this order"
     );
     if (proceed) {
-      fetch(`http://localhost:5000/user${id}`,{
+      fetch(`https://server-to-side.vercel.app/user${id}`,{
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -53,7 +51,7 @@ const AllUsers = () => {
   const handelUserVerify = (id) => {
     // console.log(id);
 
-    fetch(`http://localhost:5000/users/verify/${id}`, {
+    fetch(`https://server-to-side.vercel.app/users/verify/${id}`, {
       method:"PUT",
     })
       .then((res) => res.json())

@@ -5,7 +5,7 @@ import ViewProduct from './ViewProduct';
 
 const MyProducts = () => {
     const {user}=useContext(AuthContext)
-    const url = `http://localhost:5000/products?email=${user?.email}`;
+    const url = `https://server-to-side.vercel.app/products?email=${user?.email}`;
     const { data:products  = [],refetch } = useQuery({
         queryKey: ['products', user?.email],
         queryFn: async () => {

@@ -6,7 +6,7 @@ import { AuthContext } from '../../AuthProvider';
 
 const MyOders = () => {
     const {user}=useContext(AuthContext)
-    const url = `http://localhost:5000/oders?email=${user?.email}`;
+    const url = `https://server-to-side.vercel.app/oders?email=${user?.email}`;
     
     const { data: oders = [],refetch } = useQuery({
         queryKey: ['oders', user?.email],
@@ -27,7 +27,7 @@ const MyOders = () => {
         console.log(id)
         
 
-        fetch(`http://localhost:5000/oders${id}`,{
+        fetch(`https://server-to-side.vercel.app/oders${id}`,{
             method:'DELETE'
         })
         .then(res=>res.json())

@@ -53,7 +53,7 @@ const Addproducts = () => {
             purchase: data.purchase,
           };
           //   console.log(product);
-          fetch("http://localhost:5000/products", {
+          fetch("https://server-to-side.vercel.app/products", {
             method: "POST",
             headers: {
               "content-type": "application/json",
@@ -91,20 +91,7 @@ const Addproducts = () => {
               className="w-full px-4 py-3 rounded-md border dark:border-gray-700  dark:text-gray-700 focus:dark:border-violet-400"
             />
           </div>
-          {/* <div className="space-y-1 text-sm">
-            <label htmlFor="sellerName" className="block dark:text-gray-400">
-              Seller Name
-            </label>
-            <input
-              type="text"
-              {...register("sellerName")}
-              name="selleremail"
-              id="selleremail"
-              defaultValue={user?.email}
-              readOnly
-              className="w-full px-4 py-3 rounded-md border dark:border-gray-700  dark:text-gray-700 focus:dark:border-violet-400"
-            />
-          </div> */}
+          
           <div className="space-y-1 text-sm mt-5">
             <label htmlFor="name" className="block dark:text-gray-400">
               Product Name
