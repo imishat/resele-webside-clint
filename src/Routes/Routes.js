@@ -14,6 +14,7 @@ import MyProducts from "../Dashboard/MyProducts/MyProducts";
 import AdminRoute from "./AdminRoute";
 import BuyresRoute from "./BuyresRoute";
 import SellerRout from "./SellerRout";
+import Payment from "../Dashboard/Payment/Payment";
 
 
 
@@ -50,7 +51,7 @@ const router=createBrowserRouter([
         element:<Dashborad></Dashborad>,
         children:[
             {
-                path:'/dashboard/add',
+                path:'/dashboard',
                 element:<BuyresRoute><MyOders></MyOders></BuyresRoute>
                 
             },
@@ -65,6 +66,12 @@ const router=createBrowserRouter([
             {
                 path:'/dashboard/myProduct',
                 element:<SellerRout><MyProducts></MyProducts></SellerRout>
+            },
+            {
+                path:'/dashboard/payment/:id',
+                element:<Payment></Payment>,
+                loader:({params})=>fetch(`http://localhost:5000/oders/${params.id}`)
+
             }  
 
         ]

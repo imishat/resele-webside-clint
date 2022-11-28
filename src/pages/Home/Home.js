@@ -7,8 +7,9 @@ import Services from './Sevices/Services';
 const Home = () => {
     return (
         <div>
-           <MemuName></MemuName>
+           
            <Banner></Banner>
+           <MemuName></MemuName>
            <Services></Services>
             
         </div>

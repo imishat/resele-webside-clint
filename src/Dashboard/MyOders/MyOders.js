@@ -86,8 +86,8 @@ const MyOders = () => {
                             <td>{oder?.location}</td>
                             <td>{oder?.reseleprice}</td>
                             <td className=''>
-                            {<>
-                                oder.reseleprice&&oder.paid &&<Link>
+                            {/* {<>
+                                oder.reseleprice&&!oder.paid &&<Link>
                                 
                                 <button className='btn btn-outline btn-success mx-2'>pay</button>
                                 
@@ -97,9 +97,25 @@ const MyOders = () => {
                                 </Link>
                                 </>}
                                <> {
-                                    oder.price && oder.paid && <span className='text-green-500'>Paid</span>
+                                    oder.reseleprice && oder.paid && <span className='text-green-500'>Paid</span>
                                 }
-                                </>
+                                </> */}
+                                 {
+                                        oder.reseleprice && !oder.paid && <Link
+                                            to={`/dashboard/payment/${oder._id}`}
+                                        >
+                                            <button
+                                                className='btn btn-primary btn-sm'
+                                            >Pay</button>
+                                        </Link>
+                                    }
+                                    {
+                                        oder.reseleprice && oder.paid && <span className='text-green-500'>Paid</span>
+                                    }
+                                    
+                                <Link>
+                                <button className='btn btn-outline btn-error me-4'onClick={() => handleDelete(oder._id)}  >Delete</button>
+                                </Link>
                             
                             </td>
                         </tr>)
