@@ -1,36 +1,16 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../../AuthProvider';
+import { Link } from 'react-router-dom';
+import {HiCheck  } from "react-icons/hi";
+import { useQuery } from '@tanstack/react-query';
 
-const Items = ({items,setModalData}) => {
+const Items = ({items,setModalData,setReport}) => {
      const{img,name,reseleprice,selername,originalprice,location,use}=items
+   
      const {user}=useContext(AuthContext)
+    
     return (
-//         <div className="card w-96 bg-base-100 shadow-xl">
-//   <figure className="px-10 pt-10">
-//     <img src={img} alt="Shoes" className="rounded-xl" />
-//   </figure>
-//   <div className="card-body items-center text-center">
-//     <h2 className="card-title">{name}</h2>
-//     <div className=''>
-//                     <p className='font-bold'>Price: {originalprice}
 
-//                       </p>
-//                     <p className='font-bold'>ReSale Price: {reseleprice}
-//                         <div className="badge badge-secondary">NEW</div></p>
-//                         <p>Location{location}</p>
-//                 <p>Used:{use}</p>
-//                 </div>
-                
-//                <div className="card-actions">
-                //  <label
-                        
-                //         htmlFor="oders-modal"
-                //         className="btn btn-primary text-white"
-                //         onClick={() =>setModalData (items)}
-                //     >Book</label>
-//     </div>
-//   </div>
-// </div>
 <div className="card card-compact shadow-xl">
             <div className='img-container'>
                 <figure><img src={img} alt="Shoes" /></figure>
@@ -51,11 +31,25 @@ const Items = ({items,setModalData}) => {
                         </div>
                         <div className='mx-4'>
                             <h1 className='font-bold'>{user.displayName}</h1>
-                            <p>Seller</p>
+                            
+                           
+                            
+                            <p>Sellers</p>
                         </div>
+                        {/* <label
+                         htmlFor="report-modal"
+                         onClick={()=>setReport(items)}>report
+                       
+                        
+                        </label> */}
+                        
+                    
                     </div>
+                    <label htmlFor="my-modal" className="btn  btn-outline btn-success"
+                     onClick={()=>setReport(items)}
+                    >Report</label>
 
-                    {/* <label htmlFor="my-modal" className="btn" onClick={() => setBuyNow(service)}>Booking</label> */}
+                  
                     <label
                         
                         htmlFor="oders-modal"

@@ -25,20 +25,7 @@ const MyOders = () => {
 
     const handleDelete = id =>{
         console.log(id)
-        // const proceed = window.confirm('Are you sure, you want to cancel this Review');
-        // fetch(`https://pothoserver.vercel.app/review/${id}`, {
-        //         method: 'DELETE'
-        //     })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         console.log(data);
-        //         if (data.deletedCount > 0){
-        //             toast.success("delete review")
-        //             const out = review.filter(odr => odr._id !== id);
-        //             setRev
-        // // const proceed = window.confirm('Are you sure, you want to cancel this Review');
-        // // if(proceed){
-        //     iew(out);
+        
 
         fetch(`http://localhost:5000/oders${id}`,{
             method:'DELETE'
@@ -86,20 +73,7 @@ const MyOders = () => {
                             <td>{oder?.location}</td>
                             <td>{oder?.reseleprice}</td>
                             <td className=''>
-                            {/* {<>
-                                oder.reseleprice&&!oder.paid &&<Link>
-                                
-                                <button className='btn btn-outline btn-success mx-2'>pay</button>
-                                
-                                </Link>
-                                <Link>
-                                <button className='btn btn-outline btn-error me-4'onClick={() => handleDelete(oder._id)}  >Delete</button>
-                                </Link>
-                                </>}
-                               <> {
-                                    oder.reseleprice && oder.paid && <span className='text-green-500'>Paid</span>
-                                }
-                                </> */}
+                        
                                  {
                                         oder.reseleprice && !oder.paid && <Link
                                             to={`/dashboard/payment/${oder._id}`}
@@ -114,7 +88,7 @@ const MyOders = () => {
                                     }
                                     
                                 <Link>
-                                <button className='btn btn-outline btn-error me-4'onClick={() => handleDelete(oder._id)}  >Delete</button>
+                                <button className='btn btn-outline btn-error mx-2'onClick={() => handleDelete(oder._id)}>Delete</button>
                                 </Link>
                             
                             </td>

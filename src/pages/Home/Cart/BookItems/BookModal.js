@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 import { AuthContext } from '../../../../AuthProvider';
 
 const BookModal = ({ modalData}) => {
-    console.log(modalData)
+    
     const {name,reseleprice,location,img}=modalData
         
     const {user}=useContext(AuthContext)

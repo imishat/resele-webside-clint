@@ -8,13 +8,18 @@ import Home from "../pages/Home/Home";
 import Cart from "../pages/Home/Cart/Cart";
 import Dashborad from "../pages/Outlet/Dashborad";
 import MyOders from "../Dashboard/MyOders/MyOders";
-import Alluser from "../Dashboard/Alluser/Alluser";
+
 import Addproducts from "../Dashboard/AddProducts/Addproducts";
 import MyProducts from "../Dashboard/MyProducts/MyProducts";
 import AdminRoute from "./AdminRoute";
 import BuyresRoute from "./BuyresRoute";
 import SellerRout from "./SellerRout";
 import Payment from "../Dashboard/Payment/Payment";
+import AllUsers from "../Dashboard/Alluser/AllUsers";
+import Blogs from "../pages/Home/Blogs/Blogs";
+import PrivetRouts from './PrivetRouts';
+import AllReport from "../Dashboard/Allreport/AllReport";
+
 
 
 
@@ -41,7 +46,11 @@ const router=createBrowserRouter([
             {
                 path:'/products/:category_id',
                 loader:({params})=>fetch(`http://localhost:5000/products/${params.category_id}`),
-                element:<Cart></Cart>
+                element:<PrivetRouts><Cart></Cart></PrivetRouts>
+            },
+            {
+                path:'/blogs',
+                element:<Blogs></Blogs>
             }
         ]
         
@@ -52,12 +61,13 @@ const router=createBrowserRouter([
         children:[
             {
                 path:'/dashboard',
-                element:<BuyresRoute><MyOders></MyOders></BuyresRoute>
+                element:<MyOders></MyOders>
                 
             },
             {
                 path:'/dashboard/allusers',
-                element:<AdminRoute><Alluser></Alluser></AdminRoute>
+                
+                element:<AdminRoute><AllUsers></AllUsers></AdminRoute>
             }  ,
             {
                 path:'/dashboard/products',
@@ -72,7 +82,11 @@ const router=createBrowserRouter([
                 element:<Payment></Payment>,
                 loader:({params})=>fetch(`http://localhost:5000/oders/${params.id}`)
 
-            }  
+            } ,
+            {
+                path:'/dashboard/report',
+                element:<AllReport></AllReport>
+            }
 
         ]
         

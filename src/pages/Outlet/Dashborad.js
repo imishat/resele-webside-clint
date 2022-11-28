@@ -8,7 +8,7 @@ import useSeller from './../../hooks/useSeller';
 
 const Dashborad = () => {
     const {user}=useContext(AuthContext)
-    const [isAdmin] = useAdmin(user?.email)
+    const [isAdmin] =useAdmin(user?.email)
     const [isBuyers]=useBuyers(user?.email)
     const[isSeller]=useSeller(user?.email)
 
@@ -31,8 +31,11 @@ const Dashborad = () => {
                         {
                             isAdmin&&<>
                                <li><Link to="/dashboard/allusers">All users</Link></li>
+                               <li><Link to="/dashboard/report">Report</Link></li>
                             </>
                         }
+                         {/* <li><Link to="/dashboard/allusers">All users</Link></li> */}
+                            
                      
                         {
                             isSeller&&<>
@@ -40,13 +43,7 @@ const Dashborad = () => {
                             <li><Link to="/dashboard/myProduct">My Products</Link></li>
                             </>
                         }
-                        {/* {
-                            isAdmin && <>
-                                
-                                <li><Link to="/dashboard/adddoctor">Add A Doctor</Link></li>
-                                <li><Link to="/dashboard/managedoctors">Manage Doctors</Link></li>
-                            </>
-                        } */}
+                       
 
                     </ul>
 
