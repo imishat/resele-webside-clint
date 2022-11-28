@@ -38,12 +38,7 @@ const Items = ({items,setModalData,setReport}) => {
                             
                             <p>Sellers</p>
                         </div>
-                        {/* <label
-                         htmlFor="report-modal"
-                         onClick={()=>setReport(items)}>report
                        
-                        
-                        </label> */}
                         
                     
                     </div>
