@@ -1,6 +1,6 @@
 <<<<<<< HEAD
 Projects name:bd.sell
-live link:https://resele-products.netlify.app/
+
 
 Project Description: bd.sell Gadget is a MERN stack website which is based on Phone sell Management,In this website We have functionality to Create,Read,Update,Delete for different kind of Phone  products.Here we can update product qunatity and stock . Also we can Add new product for every logged in user and also can showing product in the UI. admin see all seller and byuer and he also delete user and seller
 
@@ -102,7 +102,7 @@ Install Stripe with npm
 
 
 ## 🔗 Links
-- [live SIte](https://singular-bombolone-150f9e.netlify.app/)
+- 
 
 
 
